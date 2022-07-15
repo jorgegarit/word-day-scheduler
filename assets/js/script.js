@@ -14,7 +14,10 @@ var five = $("#5pm");
 var todaysDate = moment().format('ddd') + ", " + moment().format("MMM Do YY");
 var currentHour= moment().hours();
 
-
+// This will display current date in the header for id currentDay
+var jumboDateDisplay = function () {
+    $("#currentDay").html(todaysDate);
+}
 
 // retrieving local storage Information for each hour
 var loadPage = function() {
@@ -64,4 +67,5 @@ var timeDue = function() {
     });
 }
 
-timeDue();
+
+jumboDateDisplay();
