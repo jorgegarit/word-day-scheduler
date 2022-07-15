@@ -10,8 +10,11 @@ var three = $("#3pm");
 var four = $("#4pm");
 var five = $("#5pm");
 
-// vars for moment.js current day and date
+// vars for moment.js current day and date and hour
 var todaysDate = moment().format('ddd') + ", " + moment().format("MMM Do YY");
+var currentHour= moment().hours();
+
+
 
 // retrieving local storage Information for each hour
 var loadPage = function() {
@@ -43,3 +46,22 @@ var loadPage = function() {
     var retrieve5 = JSON.parse(localStorage.getItem("05:00pm"));
     five.val(retrieve5);
 }
+
+// function to change the background color of the text area depending on its relationship to the current time 
+var timeDue = function() {
+    $(".form-control").each(function() {
+        var testForTime = parseInt($(this).attr("id"));
+        hour = parseInt(currentHour);
+
+        // if/else statements to determine the color fo the background depending on the current time from currentHour
+        if (hour > testForTime ) {
+            $(this).addClass("past");
+        } else if (hour < testForTime) {
+            $(this).addClass("future");
+        } else {
+            $(this).addClass("present");
+        }
+    });
+}
+
+timeDue();
