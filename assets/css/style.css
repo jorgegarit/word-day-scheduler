@@ -90,3 +90,20 @@ textarea{
   border: 3px solid black;
   border-radius: 15px;
 }
+
+.present {
+  background-color: #ff9a98;
+  color: black;
+  font-weight: bold;
+}
+
+.past {
+  background-color: #d3d3d3;
+  color: blue;
+  font-weight: lighter;
+}
+
+.future {
+  background-color: #cdffc7;
+  color: black;
+}
