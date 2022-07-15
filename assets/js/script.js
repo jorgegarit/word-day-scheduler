@@ -67,5 +67,14 @@ var timeDue = function() {
     });
 }
 
+// function so that click icon of button will save input to localStorage
+var saveUserInput = function() {
+    $(".saveBtn").on("click", function() {
+        var userInput = $(this).siblings(".form-control").val().trim();
+        var associatedHour = $(this).siblings(".input-group-prepend").text().trim(); // we use .text here instead of .val because we want to associate it ot the text field so that way we can load the saved items based on the text ex :09:00am
+        localStorage.setItem(associatedHour, JSON.stringify(userInput));
+    });
+}
 
-jumboDateDisplay();
+saveUserInput();
+loadPage();
