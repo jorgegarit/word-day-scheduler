@@ -63,6 +63,9 @@ textarea{
   border-bottom-right-radius: 15px;
   background-color: #06AED5;
   color: white;
+  /* Am adding a width element to the save btn so that the icon will actually show */
+  width: 100px;
+  font-size: 25px;
 }
 
 .saveBtn i:hover {
