@@ -76,5 +76,11 @@ var saveUserInput = function() {
     });
 }
 
-saveUserInput();
-loadPage();
+// creating call function
+
+$(document).ready(function() {
+    jumboDateDisplay();
+    loadPage();
+    timeDue();
+    saveUserInput();
+});
